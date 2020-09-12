@@ -8,8 +8,8 @@ After succesfully completing this course, the student is able to:
 - explain the concept of and identify (implicit) bias in data and ML algorithms
 
 **Expected prior knowledge:**<br>
-CSE1100/TI1206 Object-oriented programming
-CSE1305/TI1316 Algorithms and Data Structures
-CSE1200/TI1106M Calculus
-CSE1205/TI1206M Linear Algebra
-CSE1210/TI2216M Probability Theory and Statistics
+- CSE1100/TI1206 Object-oriented programming
+- CSE1305/TI1316 Algorithms and Data Structures
+- CSE1200/TI1106M Calculus
+- CSE1205/TI1206M Linear Algebra
+- CSE1210/TI2216M Probability Theory and Statistics
