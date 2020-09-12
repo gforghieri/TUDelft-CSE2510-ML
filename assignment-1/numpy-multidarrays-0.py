@@ -14,3 +14,18 @@ column = X[:, j]
 
 assert (column == np.array([ 3,  8, 13, 18, 23])).all()
 column
+
+# Given an ndarray X with shape (m,n), calculate the mean of each column.
+# Try doing this without using np.mean or loops.
+# Hint: try to sum up the entries and dividing them by the number of elements
+
+means = 0
+means = np.arange(m)
+# START ANSWER
+for i in means:
+    means[i] = np.sum(X[:, i]) / len(X[:, i])
+
+# END ANSWER
+
+assert (means == np.array([10., 11., 12., 13., 14.])).all()
+means
