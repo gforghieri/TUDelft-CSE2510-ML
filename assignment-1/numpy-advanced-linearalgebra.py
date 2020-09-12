@@ -11,3 +11,16 @@ dot_product = np.dot(v, w)
 # END ANSWER
 
 assert (dot_product == np.sum(v * w))
+
+# Calculate the product of a matrix A of shape (M,N) with a vector v of shape (N,).
+m = n = 5
+X = np.arange(m * n).reshape(m, n)
+v = np.arange(n).reshape(n)
+
+product = None
+# START ANSWER
+product = np.matmul(X, v)
+# END ANSWER
+
+assert (product == np.array([30, 80, 130, 180, 230])).all()
+product
