@@ -45,3 +45,17 @@ assert (X_0 == np.array([[-10., -10., -10., -10., -10.],
                          [10., 10., 10., 10., 10.]])
         ).all()
 X_0
+
+
+# Given column j, find the largest element and return the entire row of this element.
+# Hint: look at the function np.argmax for this.
+X = np.random.rand(m, n)
+j = 3
+
+# START ANSWER
+selected_column = X[:, j-1]
+max_row = X[np.argmax(selected_column), :]
+# END ANSWER
+
+# Please inspect visually whether your code returns the right row
+X, max_row
