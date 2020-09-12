@@ -12,7 +12,7 @@ column = None
 column = X[:, j]
 # END ANSWER
 
-assert (column == np.array([ 3,  8, 13, 18, 23])).all()
+assert (column == np.array([3, 8, 13, 18, 23])).all()
 column
 
 # Given an ndarray X with shape (m,n), calculate the mean of each column.
@@ -29,3 +29,19 @@ for i in means:
 
 assert (means == np.array([10., 11., 12., 13., 14.])).all()
 means
+
+# Now subtract the mean vector you just calculated from all the rows in your matrix leading to the
+# data matrix X_0. Yes this can be done without a loop! Hint: look at array broadcasting.
+
+X_0 = None
+# START ANSWER
+X_0 = X - means
+# END ANSWER
+
+assert (X_0 == np.array([[-10., -10., -10., -10., -10.],
+                         [-5., -5., -5., -5., -5.],
+                         [0., 0., 0., 0., 0.],
+                         [5., 5., 5., 5., 5.],
+                         [10., 10., 10., 10., 10.]])
+        ).all()
+X_0
