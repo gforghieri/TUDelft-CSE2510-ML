@@ -15,7 +15,7 @@ def normal_PDF(x, mean, sd):
 
 # Set x, mean and standard deviation
 x = 0.5
-mean = 2
+mean = 5
 sd = 0.5
 my_pdf = normal_PDF(x, mean, sd)
 
@@ -25,6 +25,6 @@ print("Your pdf function outcome: ", my_pdf, " Scipy's function outcome: ", scip
 assert np.isclose(my_pdf, scipy_pdf)
 
 # And we plot the result of your PDF function for 100 points between 0 and 4: np.linspace(0, 4, 100)
-xs = np.linspace(0, 4, 100)
+xs = np.linspace(0, 10, 100)
 plt.plot(xs, normal_PDF(xs, mean, sd))
 plt.show()
