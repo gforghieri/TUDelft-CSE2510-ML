@@ -61,8 +61,7 @@ def compute_mean(x):
 def compute_sd(x, mean):
     sd = 0
     # START ANSWER
-
-
+    sd = np.sqrt(np.sum((x - mean)**2) / len(x))
     # END ANSWER
     return sd
 
