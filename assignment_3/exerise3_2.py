@@ -1,4 +1,5 @@
 from exercise1_1 import *
+from exercise3_1 import *
 
 def plot_neighbours(X_train, Y_train, test_instance, k):
     """
