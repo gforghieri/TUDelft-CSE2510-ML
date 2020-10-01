@@ -24,4 +24,4 @@ def plot_errors(X_train, X_test, Y_train, Y_test, predictions, k):
     return
 
 
-plot_errors(X_train, X_test, Y_train, Y_test, predictions, k)
+# plot_errors(X_train, X_test, Y_train, Y_test, predictions, k)
