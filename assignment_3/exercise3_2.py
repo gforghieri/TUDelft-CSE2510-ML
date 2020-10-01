@@ -18,8 +18,8 @@ def plot_neighbours(X_train, Y_train, test_instance, k):
     plt.show()
 
 
-for i in range(3):
-    test_instance = X_test[i]
-    k = 5
-    plt.title('Test instance %s and its nearest neighbors' % (i + 1))
-    plot_neighbours(X_train, Y_train, test_instance, k)
+# for i in range(3):
+#     test_instance = X_test[i]
+#     k = 5
+#     plt.title('Test instance %s and its nearest neighbors' % (i + 1))
+#     plot_neighbours(X_train, Y_train, test_instance, k)

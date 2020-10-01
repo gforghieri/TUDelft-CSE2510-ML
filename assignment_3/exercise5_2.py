@@ -16,6 +16,10 @@ def accuracy_score_self(Y_test, predictions):
     for i in range(len(predictions)):
         if predictions[i] == Y_test[i]:
             correct_labels = np.append(correct_labels, predictions[i])
+        else:
+            print(i)
+            print(Y_test[i])
+            print(predictions[i])
 
     accuracy = len(correct_labels) / len(predictions)
 
