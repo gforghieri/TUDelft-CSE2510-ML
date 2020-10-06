@@ -16,4 +16,4 @@ for i in range(10):
     plt.gray()
     plt.title("digit: " + str(binary_digits_labels[i]))
     plt.imshow(digit_image)
-    plt.show()
+    # plt.show()
