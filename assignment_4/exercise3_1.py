@@ -1,8 +1,8 @@
 from exercise2_1 import *
 
 
-# z = np.linspace(-5, 5, 100)
-# sigmoid = 1 / (1 + np.exp(-z))
+z = np.linspace(-5, 5, 100)
+sigmoid = 1 / (1 + np.exp(-z))
 # plt.title('Sigmoid function')
 # plt.xlabel(r'$\theta^T x + bias$')
 # plt.ylabel(r'$\sigma(\theta^T x + bias$)')
@@ -29,8 +29,8 @@ def plot_hypothesis(features, labels, theta, bias):
 theta = 0
 bias = 0
 # START ANSWER
-theta = 0.6
-bias = -5
+theta = 1
+bias = 1
 # END ANSWER
 
 plot_hypothesis(binary_digits_features, binary_digits_labels, theta, bias)
@@ -42,4 +42,4 @@ def add_one_features(data):
 
 
 binary_digits_features_prime = add_one_features(binary_digits_features)
-print(binary_digits_features_prime[:10])
+# print(binary_digits_features_prime[:10])
