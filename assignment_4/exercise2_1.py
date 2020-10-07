@@ -52,7 +52,7 @@ def plot_scatter(features, labels, db_x=None, db_y=None):
     plt.xlim((widths.min() - 1, widths.max() + 1))
     plt.ylim((lengths.min() - 1, lengths.max() + 1))
     plt.legend(loc=3)
-    plt.show()
+    # plt.show()
 
 
-plot_scatter(binary_digits_features, binary_digits_labels)
+# plot_scatter(binary_digits_features, binary_digits_labels)
