@@ -33,7 +33,7 @@ theta = 1
 bias = 1
 # END ANSWER
 
-plot_hypothesis(binary_digits_features, binary_digits_labels, theta, bias)
+# plot_hypothesis(binary_digits_features, binary_digits_labels, theta, bias)
 
 
 # This function adds an extra 1.0 to every feature vector
