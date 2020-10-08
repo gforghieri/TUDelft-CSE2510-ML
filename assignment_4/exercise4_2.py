@@ -37,7 +37,7 @@ def apply_gradient(theta, gradient, alpha):
     """
     updated_theta = theta
     # START ANSWER
-    updated_theta += (alpha * gradient)
+    updated_theta = updated_theta + (alpha * gradient)
 
     # END ANSWER
     return updated_theta
