@@ -10,7 +10,7 @@ def hypothesis(x, theta):
     :return: predicted probability.
     """
     # START ANSWER
-    sigmoid = 1 / (1 + np.exp(-np.dot(x, theta)))
+    sigmoid = 1 / (1 + np.exp(-np.matmul(x, theta.T)))
     # END ANSWER
     return sigmoid
 

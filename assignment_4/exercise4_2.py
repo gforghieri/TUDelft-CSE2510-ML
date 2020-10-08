@@ -11,20 +11,9 @@ def calculate_gradients(theta, x, y):
     """
     gradients = np.zeros((len(x), len(theta)))
     # START ANSWER
-
-    gradients = x * (y-hypothesis(x,theta))
-
-    gradients = y - hypothesis(x, theta)
-    gradients = x.T[0] * gradients
-
-
-
-    gradients = hypothesis(x, theta)
-    gradientss = y - gradients
-
-    # for i in range(len())
-    gradientsss = gradientss * x
-    # END ANSWER
+    temp = (y-hypothesis(x, theta))
+    for i in range(len(x)):
+        gradients[i] = temp[i] * x[i]
     return gradients
 
 
