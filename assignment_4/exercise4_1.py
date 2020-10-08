@@ -61,3 +61,40 @@ print(ll5)
 assert ll5 < -10.0
 assert np.isclose(ll4, -0.156653, rtol=0.5)
 # Due to the wrong predictions, this likelihood is very low
+
+# Use only the width feature
+width_features = binary_digits_features[:,0]
+width_features_prime = add_one_features(width_features)
+binary_digits_labels
+
+# axis limits to plot
+min_theta_0 = -20.0
+max_theta_0 = 5.0
+min_bias = -30.0
+max_bias = 150.0
+
+# resolution for both axis
+N = 50
+thetas_0 = np.linspace(min_theta_0, max_theta_0, N)
+biases = np.linspace(min_bias, max_bias, N)
+
+# 2D array with log likelihoods to be filled
+log_likelihoods = np.zeros(shape=(len(biases), len(thetas_0)))
+# fill the 2D array
+for i_theta_0, theta_0 in enumerate(thetas_0):
+    for i_bias, bias in enumerate(biases):
+        # construct theta
+        theta = np.array([theta_0, bias])
+        h_x = hypothesis(width_features_prime, theta)
+        ll = log_likelihood(h_x, binary_digits_labels)
+        log_likelihoods[i_bias,i_theta_0] = ll
+
+# plot log likelihoods
+X, Y = np.meshgrid(thetas_0, biases)
+cs = plt.contourf(X, Y, log_likelihoods, cmap="PuRd")
+plt.title('Log-Likelihoods')
+plt.xlabel(r'$\theta_0$')
+plt.ylabel('bias')
+plt.colorbar(cs)
+
+plt.show()
