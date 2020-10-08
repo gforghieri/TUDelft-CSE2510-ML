@@ -10,8 +10,7 @@ def hypothesis(x, theta):
     :return: predicted probability.
     """
     # START ANSWER
-    last_index = len(theta)-1
-    sigmoid = 1 / (1 + np.exp(-(theta[0:last_index] * x[:, 0:last_index] + theta[last_index])))
+    sigmoid = 1 / (1 + np.exp(-np.dot(x, theta)))
     # END ANSWER
     return sigmoid
 
@@ -40,4 +39,4 @@ print("Prediction minus fives: {}".format(hypothesis_min_fives[:5]))
 
 assert np.isclose(hypothesis_zeros, 0.5).all()
 assert np.isclose(hypothesis_min_fives, 0).all()
-# assert np.isclose(hypothesis_ones, 1).all()
+assert np.isclose(hypothesis_ones, 1).all()

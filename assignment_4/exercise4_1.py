@@ -89,12 +89,12 @@ for i_theta_0, theta_0 in enumerate(thetas_0):
         ll = log_likelihood(h_x, binary_digits_labels)
         log_likelihoods[i_bias,i_theta_0] = ll
 
-# plot log likelihoods
-X, Y = np.meshgrid(thetas_0, biases)
-cs = plt.contourf(X, Y, log_likelihoods, cmap="PuRd")
-plt.title('Log-Likelihoods')
-plt.xlabel(r'$\theta_0$')
-plt.ylabel('bias')
-plt.colorbar(cs)
-
-plt.show()
+# # plot log likelihoods
+# X, Y = np.meshgrid(thetas_0, biases)
+# cs = plt.contourf(X, Y, log_likelihoods, cmap="PuRd")
+# plt.title('Log-Likelihoods')
+# plt.xlabel(r'$\theta_0$')
+# plt.ylabel('bias')
+# plt.colorbar(cs)
+#
+# plt.show()
