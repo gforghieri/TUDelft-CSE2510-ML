@@ -47,6 +47,8 @@ theta = np.array([1, 2, 3])
 gradient = np.array([10, -10, 5])
 alpha = 0.1
 updated_theta = apply_gradient(theta, gradient, alpha)
-print(updated_theta)
+# print(updated_theta)
 
 assert (updated_theta == np.array([2, 1, 3.5])).all()
+
+

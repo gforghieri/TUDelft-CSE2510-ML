@@ -28,19 +28,19 @@ def log_likelihood(h_x, y):
 h_x1 = np.array([0.01, 0.01, 0.99, 0.99])
 y1 = np.array([0, 0, 1, 1])
 ll1 = log_likelihood(h_x1, y1)
-print(ll1)
+# print(ll1)
 
 # These predictions should do ok
 h_x2 = np.array([0.2, 0.1, 0.9, 0.8])
 y2 = np.array([0, 0, 1, 1])
 ll2 = log_likelihood(h_x2, y2)
-print(ll2)
+# print(ll2)
 
 # These predictions should do bad
 h_x3 = np.array([0.9, 0.8, 0.99, 0.3, 0.1])
 y3 = np.array([0, 0, 1, 1, 1])
 ll3 = log_likelihood(h_x3, y3)
-print(ll3)
+# print(ll3)
 
 assert np.isclose(ll1, -0.040201)
 assert np.isclose(ll2, -0.657008)
@@ -51,12 +51,12 @@ assert np.isclose(ll3, -7.428631)
 h_x4 = np.array([0.0, 0.1, 1.0, 0.95])
 y4 = np.array([0, 0, 1, 1])
 ll4 = log_likelihood(h_x4, y4)
-print(ll4)
+# print(ll4)
 
 h_x5 = np.array([1.0, 0.99, 0.0, 0.01])
 y5 = np.array([0, 0, 1, 1])
 ll5 = log_likelihood(h_x5, y5)
-print(ll5)
+# print(ll5)
 
 assert ll5 < -10.0
 assert np.isclose(ll4, -0.156653, rtol=0.5)

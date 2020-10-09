@@ -24,7 +24,7 @@ assert (widths[:5] == np.array([8.5, 8.0, 9.25, 8.125, 9.5])).all()
 assert (lengths[:5] == np.array([12.875, 15.625, 15.0, 15.75, 14.875])).all()
 
 binary_digits_features = np.vstack((widths, lengths)).T
-print(binary_digits_features[:10])
+# print(binary_digits_features[:10])
 
 
 def plot_scatter(features, labels, db_x=None, db_y=None):

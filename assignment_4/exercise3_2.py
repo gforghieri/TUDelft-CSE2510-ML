@@ -31,11 +31,11 @@ hypothesis_min_fives = hypothesis(x, theta_min_ones)
 
 # Output for each theta vector
 # expected = 1.0
-print("Prediction ones: {}".format(hypothesis_ones[:5]))
-# expected = 0.5
-print("Prediction zeros: {}".format(hypothesis_zeros[:5]))
-# expected = ~0
-print("Prediction minus fives: {}".format(hypothesis_min_fives[:5]))
+# print("Prediction ones: {}".format(hypothesis_ones[:5]))
+# # expected = 0.5
+# print("Prediction zeros: {}".format(hypothesis_zeros[:5]))
+# # expected = ~0
+# print("Prediction minus fives: {}".format(hypothesis_min_fives[:5]))
 
 assert np.isclose(hypothesis_zeros, 0.5).all()
 assert np.isclose(hypothesis_min_fives, 0).all()
