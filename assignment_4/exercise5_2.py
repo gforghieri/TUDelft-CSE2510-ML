@@ -20,3 +20,9 @@ y_true = np.array([0, 1, 0, 1, 1])
 
 accuracy = compute_accuracy(predictions, y_true)
 assert accuracy == 0.6
+
+predictions = predict_binary(x_test_digits, theta_digits)
+accuracy = compute_accuracy(predictions, y_test_digits)
+
+print("accuracy: " + str(accuracy))
+assert accuracy > 0.95
