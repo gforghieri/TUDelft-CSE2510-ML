@@ -27,14 +27,14 @@ accuracy = compute_accuracy(predictions, y_test_digits)
 print("accuracy: " + str(accuracy))
 assert accuracy > 0.95
 
-def plot_theta_image(theta, title=r"$\theta$ vector"):
-    # remove bias from the image
-    theta_no_bias = theta[:64].reshape(8,8)
-    plt.figure()
-    plt.gray()
-    plt.title(title)
-    plt.imshow(theta_no_bias)
-
-print(theta_digits)
-plot_theta_image(theta_digits)
-theta_digits
+# def plot_theta_image(theta, title=r"$\theta$ vector"):
+#     # remove bias from the image
+#     theta_no_bias = theta[:64].reshape(8,8)
+#     plt.figure()
+#     plt.gray()
+#     plt.title(title)
+#     plt.imshow(theta_no_bias)
+#
+# print(theta_digits)
+# plot_theta_image(theta_digits)
+# theta_digits
