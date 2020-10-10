@@ -28,6 +28,8 @@ for class_no in range(n_classes):
     current_label = class_no
     # Hint: convert the labels array to have only 1's at the current class_no
     # START ANSWER
+
+
     # END ANSWER
     print("class_no: " + str(class_no))
 
