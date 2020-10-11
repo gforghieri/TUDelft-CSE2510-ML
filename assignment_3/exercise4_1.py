@@ -20,11 +20,11 @@ def get_majority_vote(neighbour_indices, training_labels):
     c = Counter(labels_of_neighbours)
     most_common = c.most_common()
 
-    if (len(most_common) > 1 and most_common[0][1] == c.most_common()[1][1]):
+    if (len(most_common) > 1 and most_common[0][1] == most_common[1][1]):
         print("TODO:")
-        most_common = c.most_common()[0][0]
+        most_common = most_common[0][0]
     else:
-        most_common = c.most_common()[0][0]
+        most_common = most_common[0][0]
         # END ANSWER
     return most_common
 

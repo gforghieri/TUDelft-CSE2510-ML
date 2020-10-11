@@ -28,7 +28,12 @@ for class_no in range(n_classes):
     current_label = class_no
     # Hint: convert the labels array to have only 1's at the current class_no
     # START ANSWER
+    converted_y_train_digits = np.where(y_train_digits == current_label, 1, 0)
+    multiclass_thetas[class_no] = train_theta(x_train_digits, converted_y_train_digits)
 
+    y_train_digits
+
+    multiclass_thetas
 
     # END ANSWER
     print("class_no: " + str(class_no))
