@@ -16,6 +16,10 @@ models = {
     "DecisionTreeClassifier": DecisionTreeClassifier(max_depth=None, min_samples_leaf=2, random_state=random_state),
     "KNeighborsClassifier": KNeighborsClassifier(n_neighbors=3, weights="distance"),
     # START ANSWER
+    # 𝐄𝐱𝐞𝐫𝐜𝐢𝐬𝐞 1  Extent the list of models with theSVC and LogisticRegression algorithms.
+    # Give the SVM a poly kernel. Also, give both algorithms a regularization constant C=0.5 and random_state=42.
+    "SVM": SVC(kernel='poly', C=0.5, random_state=42),
+    "LogisticRegression": LogisticRegression(C=0.5, random_state=42)
     # END ANSWER
 }
 
