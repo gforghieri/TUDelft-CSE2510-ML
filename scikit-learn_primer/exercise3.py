@@ -20,3 +20,16 @@ for name, model in models.items():
     print("- f1_score", f1_score_value)
 
 # END ANSWER
+
+from sklearn.model_selection import KFold
+from sklearn.model_selection import cross_validate
+
+
+def k_fold_fit_and_evaluate(X, y, model, scoring_method, n_splits=5):
+    # define evaluation procedure
+    cv = KFold(n_splits=n_splits, random_state=42, shuffle=True)
+    # evaluate model
+    scores = cross_validate(model, X, y, scoring=scoring_method, cv=cv, n_jobs=-1)
+
+    return scores["test_score"]
+
