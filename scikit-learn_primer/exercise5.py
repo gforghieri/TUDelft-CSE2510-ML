@@ -41,8 +41,8 @@ for model_name, parameters in model_parameters.items():
     best_score = grid_search.best_score_
     best_params = grid_search.best_params_
 
-    print(model_name)
-    print("- best_score =", best_score)
-    print("best paramters:")
-    for k, v in best_params.items():
-        print("-", k, v)
+    # print(model_name)
+    # print("- best_score =", best_score)
+    # print("best paramters:")
+    # for k, v in best_params.items():
+    #     print("-", k, v)
