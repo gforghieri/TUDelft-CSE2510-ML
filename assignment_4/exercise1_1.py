@@ -20,10 +20,10 @@ i.e.: all_digits_images[image_index,row,column]
 the values of the pixels are values between 0 (black) and 16 (white)
 '''
 
-# for i in range(10):
-#     digit_image = all_digits_images[i]
-#     plt.figure()
-#     plt.gray()
-#     plt.title("digit: " + str(all_digits_labels[i]))
-#     plt.imshow(digit_image)
-#     # plt.show()
+for i in range(10):
+    digit_image = all_digits_images[i]
+    plt.figure()
+    plt.gray()
+    plt.title("digit: " + str(all_digits_labels[i]))
+    plt.imshow(digit_image)
+    # plt.show()
