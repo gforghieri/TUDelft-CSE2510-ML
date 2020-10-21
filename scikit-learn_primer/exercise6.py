@@ -25,14 +25,70 @@ scaler = preprocessing.Normalizer()
 # First, transform the dataset using the Normalizer transformer.
 # Then fit and evaluate each model using the transformed features.
 
-normalized_X_train = scaler.transform(X_train)
-normalized_X_test = scaler.transform(X_test)
+for name, model in models.items():
+    prediction = model.predict(X_test)
+    f1_score_value = f1_score(prediction, y_test, average="weighted")
+    accuracy = accuracy_score(prediction, y_test)
+    print(name)
+    print("- accuracy_score", accuracy)
+    print("- f1_score", f1_score_value)
+
+
+print()
+print()
+print()
+print()
+print()
+print()
+print()
+
+normalized_X_train = scaler.fit(X_train).transform(X_train)
+normalized_X_test = scaler.fit(X_test).transform(X_test)
 
 for name, model in models.items():
     model.fit(normalized_X_train, y_train)
 
 for name, model in models.items():
     prediction = model.predict(normalized_X_test)
+    f1_score_value = f1_score(prediction, y_test, average="weighted")
+    accuracy = accuracy_score(prediction, y_test)
+    print(name)
+    print("- accuracy_score", accuracy)
+    print("- f1_score", f1_score_value)
+
+    normalized_X_train = scaler.fit(X_train).transform(X_train)
+    normalized_X_test = scaler.fit(X_test).transform(X_test)
+
+    for name, model in models.items():
+        model.fit(normalized_X_train, y_train)
+
+    for name, model in models.items():
+        prediction = model.predict(normalized_X_test)
+        f1_score_value = f1_score(prediction, y_test, average="weighted")
+        accuracy = accuracy_score(prediction, y_test)
+        print(name)
+        print("- accuracy_score", accuracy)
+        print("- f1_score", f1_score_value)
+
+print()
+print()
+print()
+print()
+print()
+print()
+print()
+
+standard_scaler = preprocessing.StandardScaler()
+
+
+scaled_X_train = standard_scaler.fit(X_train).transform(X_train)
+scaled_X_test = standard_scaler.fit(X_test).transform(X_test)
+
+for name, model in models.items():
+    model.fit(scaled_X_train, y_train)
+
+for name, model in models.items():
+    prediction = model.predict(scaled_X_test)
     f1_score_value = f1_score(prediction, y_test, average="weighted")
     accuracy = accuracy_score(prediction, y_test)
     print(name)
