@@ -18,16 +18,22 @@ models = {
 }
 
 assert "GaussianNB" in models and isinstance(models["GaussianNB"], GaussianNB), "There is no GaussianNB in models"
-assert "DecisionTreeClassifier" in models and isinstance(models["DecisionTreeClassifier"], DecisionTreeClassifier), "There is no DecisionTreeClassifier in models"
-assert "KNeighborsClassifier" in models and isinstance(models["KNeighborsClassifier"], KNeighborsClassifier), "There is no KNeighborsClassifier in models"
+assert "DecisionTreeClassifier" in models and isinstance(models["DecisionTreeClassifier"],
+                                                         DecisionTreeClassifier), "There is no DecisionTreeClassifier in models"
+assert "KNeighborsClassifier" in models and isinstance(models["KNeighborsClassifier"],
+                                                       KNeighborsClassifier), "There is no KNeighborsClassifier in models"
 assert "SVM" in models and isinstance(models["SVM"], SVC), "There is no SVC in models"
-assert "LogisticRegression" in models and isinstance(models["LogisticRegression"], LogisticRegression), "There is no LogisticRegression in models"
+assert "LogisticRegression" in models and isinstance(models["LogisticRegression"],
+                                                     LogisticRegression), "There is no LogisticRegression in models"
 
 # 4. fit
 # 5. predict
 # 6. evaluate
 # 7. graph/plot
 # 8. analyze
+
+accuracies_28x28 = []
+accuracies_8x8 = []
 
 # 4. fit 28x28
 for name, model in models.items():
@@ -45,12 +51,12 @@ for name, model in models.items():
     predictions_28x28 = model.predict(scaled_X_test_28x28)
     f1_score_value = f1_score(y_true=y_test, y_pred=predictions_28x28, average="weighted")
     accuracy = accuracy_score(y_true=y_test, y_pred=predictions_28x28)
+    accuracies_28x28 = np.append(accuracies_28x28, accuracy)
     # logloss = log_loss(y_true=y_test, y_pred=model.predict_proba(scaled_X_test_28x28))
     print(name + "28x28")
     print("- accuracy_score", accuracy)
     print("- f1_score", f1_score_value)
     # print("- logloss", logloss)
-
 
 # 4. fit 8x8
 for name, model in models.items():
@@ -68,27 +74,84 @@ for name, model in models.items():
     predictions_8x8 = model.predict(scaled_X_test_8x8)
     f1_score_value = f1_score(y_true=y_test, y_pred=predictions_8x8, average="weighted")
     accuracy = accuracy_score(y_true=y_test, y_pred=predictions_8x8)
+    accuracies_8x8 = np.append(accuracies_8x8, accuracy)
     print(name + "8x8")
     print("- accuracy_score", accuracy)
     print("- f1_score", f1_score_value)
-    plt.hist(accuracy_score, label=name + "8x8")
-    plt.plot(accuracy_score, label=name + "8x8")
 
-    # plt.hist(setosa_X_train[:, feature_idx], label=iris.target_names[0])
-    # plt.hist(versicolor_X_train[:, feature_idx], label=iris.target_names[1])
-    # plt.hist(virginica_X_train[:, feature_idx], label=iris.target_names[2])
+    # import numpy as np
+    # import matplotlib.pyplot as plt
     #
-    # # Plot your PDFs here
-    # xs = np.linspace(0, 7, 100)
+    # # data to plot
+    # accuracies_28x28
+    # accuracies_8x8
     #
-    # # START ANSWER
-    # plt.plot(xs, normal_PDF(xs, mean_setosa, sd_setosa))
-    # plt.plot(xs, normal_PDF(xs, mean_versicolor, sd_versicolor))
-    # plt.plot(xs, normal_PDF(xs, mean_virginica, sd_virginica))
+    # # create plot
+    # fig, ax = plt.subplots()
+    # bar_width = 0.35
+    # X = np.arange(len(models))
     #
-    # # END ANSWER
+    # p1 = plt.bar(X, accuracies_28x28, bar_width, color='b',
+    #              label='28x28 dataset')
     #
-    # plt.xlabel(iris.feature_names[feature_idx])
-    # plt.ylabel('Number of flowers / PDF')
+    # # The bar of second plot starts where the first bar ends
+    # p2 = plt.bar(X + bar_width, accuracies_8x8, bar_width,
+    #              color='g',
+    #              label='8x8 dataset')
+    #
+    # plt.xlabel(models.keys())
+    # plt.ylabel('Accuracy Scores')
+    # plt.title('Scores in each subject')
+    # plt.xticks(X + (bar_width / 2), (
+    # 'GaussianNB', 'DummyClassifier', 'DecisionTreeClassifier', 'KNeighborsClassifier', 'SVM', 'LogisticRegression'))
     # plt.legend()
+    #
+    # plt.tight_layout()
     # plt.show()
+
+    # # Pass the x and y cordinates of the bars to the
+    # # function. The label argument gives a label to the data.
+    # plt.bar(name, accuracy, label="Data 1")
+    # plt.legend()
+    #
+    # # The following commands add labels to our figure.
+    # plt.xlabel(name + "8x8")
+    # plt.ylabel('Accuracy score')
+    # plt.title('Performance of classifiers on 8x8 vs 28x28 MNIST dataset')
+    #
+    # plt.show()
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# data to plot
+
+accuracies_28x28
+
+# marks_john = [0.1, 0.5, 0.8, 0.1, 0.5, 0.9]
+# marks_sam = [0.25, 0.5, 0.5, 0.5, 0.5, 0.1]
+
+
+
+# create plot
+fig, ax = plt.subplots()
+bar_width = 0.35
+X = np.arange(6)
+
+p1 = plt.bar(X, accuracies_28x28 , bar_width, color='b',
+             label='28x28 dataset')
+
+# The bar of second plot starts where the first bar ends
+p2 = plt.bar(X + bar_width, accuracies_8x8, bar_width,
+             color='g',
+             label='8x8 dataset')
+
+plt.xlabel('Algorithms')
+plt.ylabel('Accuracy Scores')
+plt.title('Performance of different algorithms per dataset 28x28 vs 8x8')
+plt.xticks(X + (bar_width / 2), (
+'GaussianNB', 'Dummy', 'DecisionTree', 'KNN', 'SVM', 'LogisticR'))
+plt.legend()
+
+plt.tight_layout()
+plt.show()
