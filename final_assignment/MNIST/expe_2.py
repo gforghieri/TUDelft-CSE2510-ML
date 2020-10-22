@@ -2,35 +2,12 @@ from sklearn.utils.validation import check_is_fitted
 
 from expe_1 import *
 
-random_state = 42
-
-models = {
-    "GaussianNB": GaussianNB(),
-    "DummyClassifier": DummyClassifier(strategy="most_frequent"),
-    "DecisionTreeClassifier": DecisionTreeClassifier(max_depth=None, min_samples_leaf=2, random_state=random_state),
-    "KNeighborsClassifier": KNeighborsClassifier(n_neighbors=3, weights="distance"),
-    # START ANSWER
-    # 𝐄𝐱𝐞𝐫𝐜𝐢𝐬𝐞 1  Extent the list of models with theSVC and LogisticRegression algorithms.
-    # Give the SVM a poly kernel. Also, give both algorithms a regularization constant C=0.5 and random_state=42.
-    "SVM": SVC(kernel='poly', C=10, random_state=42),
-    "LogisticRegression": LogisticRegression(C=10, random_state=42, penalty='none')
-    # END ANSWER
-}
-
-assert "GaussianNB" in models and isinstance(models["GaussianNB"], GaussianNB), "There is no GaussianNB in models"
-assert "DecisionTreeClassifier" in models and isinstance(models["DecisionTreeClassifier"],
-                                                         DecisionTreeClassifier), "There is no DecisionTreeClassifier in models"
-assert "KNeighborsClassifier" in models and isinstance(models["KNeighborsClassifier"],
-                                                       KNeighborsClassifier), "There is no KNeighborsClassifier in models"
-assert "SVM" in models and isinstance(models["SVM"], SVC), "There is no SVC in models"
-assert "LogisticRegression" in models and isinstance(models["LogisticRegression"],
-                                                     LogisticRegression), "There is no LogisticRegression in models"
-
 # 4. fit
 # 5. predict
 # 6. evaluate
 # 7. graph/plot
 # 8. analyze
+
 
 accuracies_28x28 = []
 accuracies_8x8 = []
@@ -94,7 +71,7 @@ p2 = plt.bar(X + bar_width, accuracies_8x8, bar_width,
 
 plt.xlabel('Algorithms')
 plt.ylabel('Accuracy Scores')
-plt.title('Performance of different algorithms per dataset 28x28 vs 8x8')
+plt.title('Performance of different algorithms on the 28x28 vs 8x8 datasets')
 plt.xticks(X + (bar_width / 2), (
     'GaussianNB', 'Dummy', 'DecisionTree', 'KNN', 'SVM', 'LogisticR'))
 plt.legend()
