@@ -79,66 +79,12 @@ for name, model in models.items():
     print("- accuracy_score", accuracy)
     print("- f1_score", f1_score_value)
 
-    # import numpy as np
-    # import matplotlib.pyplot as plt
-    #
-    # # data to plot
-    # accuracies_28x28
-    # accuracies_8x8
-    #
-    # # create plot
-    # fig, ax = plt.subplots()
-    # bar_width = 0.35
-    # X = np.arange(len(models))
-    #
-    # p1 = plt.bar(X, accuracies_28x28, bar_width, color='b',
-    #              label='28x28 dataset')
-    #
-    # # The bar of second plot starts where the first bar ends
-    # p2 = plt.bar(X + bar_width, accuracies_8x8, bar_width,
-    #              color='g',
-    #              label='8x8 dataset')
-    #
-    # plt.xlabel(models.keys())
-    # plt.ylabel('Accuracy Scores')
-    # plt.title('Scores in each subject')
-    # plt.xticks(X + (bar_width / 2), (
-    # 'GaussianNB', 'DummyClassifier', 'DecisionTreeClassifier', 'KNeighborsClassifier', 'SVM', 'LogisticRegression'))
-    # plt.legend()
-    #
-    # plt.tight_layout()
-    # plt.show()
-
-    # # Pass the x and y cordinates of the bars to the
-    # # function. The label argument gives a label to the data.
-    # plt.bar(name, accuracy, label="Data 1")
-    # plt.legend()
-    #
-    # # The following commands add labels to our figure.
-    # plt.xlabel(name + "8x8")
-    # plt.ylabel('Accuracy score')
-    # plt.title('Performance of classifiers on 8x8 vs 28x28 MNIST dataset')
-    #
-    # plt.show()
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-# data to plot
-
-accuracies_28x28
-
-# marks_john = [0.1, 0.5, 0.8, 0.1, 0.5, 0.9]
-# marks_sam = [0.25, 0.5, 0.5, 0.5, 0.5, 0.1]
-
-
-
 # create plot
 fig, ax = plt.subplots()
 bar_width = 0.35
 X = np.arange(6)
 
-p1 = plt.bar(X, accuracies_28x28 , bar_width, color='b',
+p1 = plt.bar(X, accuracies_28x28, bar_width, color='b',
              label='28x28 dataset')
 
 # The bar of second plot starts where the first bar ends
@@ -150,7 +96,7 @@ plt.xlabel('Algorithms')
 plt.ylabel('Accuracy Scores')
 plt.title('Performance of different algorithms per dataset 28x28 vs 8x8')
 plt.xticks(X + (bar_width / 2), (
-'GaussianNB', 'Dummy', 'DecisionTree', 'KNN', 'SVM', 'LogisticR'))
+    'GaussianNB', 'Dummy', 'DecisionTree', 'KNN', 'SVM', 'LogisticR'))
 plt.legend()
 
 plt.tight_layout()
