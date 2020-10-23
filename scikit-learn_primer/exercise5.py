@@ -23,10 +23,12 @@ model_parameters = {
         'weights': ['uniform', 'distance']
     },
     "SVM": {
+        'random_state': [random_state],
         'C': np.arange(0.5, 15, 0.5)
     },
     "LogisticRegression": {
-        'C': np.arange(0.5, 1, 0.5)
+        'random_state': [random_state],
+        'C': np.arange(0.5, 15, 0.5)
     }
     # END ANSWER
 }
