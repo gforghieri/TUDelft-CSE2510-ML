@@ -30,13 +30,17 @@ flat_X_test_8x8 = X_test_8x8.reshape(X_test_8x8.shape[0], -1)
 
 # 3. scale
 # scale both train and test features from rgb (0-255) to black & whtie (0-1)
-min_max_scaler = MinMaxScaler()
+min_max_scaler_28x28 = MinMaxScaler()
+min_max_scaler_8x8 = MinMaxScaler()
 
-scaled_X_train_28x28 = min_max_scaler.fit_transform(X=flat_X_train_28x28)
-scaled_X_test_28x28 = min_max_scaler.fit_transform(X=flat_X_test_28x28)
+min_max_scaler_28x28.fit(flat_X_train_28x28)
+min_max_scaler_8x8.fit(flat_X_train_8x8)
 
-scaled_X_train_8x8 = min_max_scaler.fit_transform(X=flat_X_train_8x8)
-scaled_X_test_8x8 = min_max_scaler.fit_transform(X=flat_X_test_8x8)
+scaled_X_train_28x28 = min_max_scaler_28x28.transform(flat_X_train_28x28)
+scaled_X_test_28x28 = min_max_scaler_28x28.transform(flat_X_test_28x28)
+
+scaled_X_train_8x8 = min_max_scaler_8x8.transform(X=flat_X_train_8x8)
+scaled_X_test_8x8 = min_max_scaler_8x8.transform(X=flat_X_test_8x8)
 
 # scaled_X_train_28x28 = flat_X_train_28x28
 # scaled_X_test_28x28 = flat_X_test_28x28
