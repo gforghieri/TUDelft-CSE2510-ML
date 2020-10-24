@@ -55,8 +55,8 @@ for model_name, parameters in model_parameters.items():
     pipeline = Pipeline(steps=steps)
 
     cv = KFold(n_splits=n_splits, random_state=random_state, shuffle=True)
-    grid_search = GridSearchCV(pipeline, parameters, cv=cv, n_jobs=-1, verbose=False, scoring='accuracy').fit(
-        mnist_28x28_train, train_labels)
+    grid_search = GridSearchCV(pipeline, parameters, cv=cv, n_jobs=-1, verbose=False, scoring=scoring_method).fit(
+        flat_mnist_28x28_train, train_labels)
 
     best_model = grid_search.best_estimator_
     best_score = grid_search.best_score_
@@ -79,8 +79,8 @@ for model_name, parameters in model_parameters.items():
     pipeline = Pipeline(steps=steps)
 
     cv = KFold(n_splits=n_splits, random_state=random_state, shuffle=True)
-    grid_search = GridSearchCV(pipeline, parameters, cv=cv, n_jobs=-1, verbose=False, scoring='accuracy').fit(
-        mnist_8x8_train, train_labels)
+    grid_search = GridSearchCV(pipeline, parameters, cv=cv, n_jobs=-1, verbose=False, scoring=scoring_method).fit(
+        flat_mnist_8x8_train, train_labels)
 
     best_model = grid_search.best_estimator_
     best_score = grid_search.best_score_
