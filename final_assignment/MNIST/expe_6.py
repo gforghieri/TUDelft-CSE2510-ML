@@ -28,5 +28,5 @@ final_prediction = final_SVC_clf.predict(scaled_final_X_test_28x28)
 
 print(final_prediction)
 
-prediction = np.array([-1] * len(final_prediction)) #TODO replace this with you own prediction
+prediction = np.array(final_prediction) #TODO replace this with you own prediction
 pd.DataFrame(prediction).to_csv("GROUP_classes_problem_mnist.txt", index=False, header=False)
