@@ -5,11 +5,14 @@ from sklearn.metrics import make_scorer
 
 n_splits = 5
 
-prediction
 
-scoring_method_f1 = make_scorer(lambda prediction, true_target: f1_score(prediction, true_target, average="weighted"))
+# scoring_method_f1 = make_scorer(lambda prediction, true_target: f1_score(y_pred=prediction,y_true=true_target, average="weighted"))
+# # START ANSWER
+# scoring_method_accuracy = make_scorer(accuracy_score)
+
+scoring_method_f1 = 'f1'
 # START ANSWER
-scoring_method_accuracy = make_scorer(accuracy_score)
+scoring_method_accuracy = 'accuracy'
 
 # END ANSWER
 
