@@ -27,7 +27,7 @@ scoring_method_roc_auc = make_scorer(roc_auc_score)
 # evaluate a model
 def evaluate_model(X, y, model, scorer):
     # define evaluation procedure
-    cv = RepeatedStratifiedKFold(n_splits=2, n_repeats=1, random_state=1)
+    cv = RepeatedStratifiedKFold(n_splits=2, n_repeats=1, random_state=42)
     # evaluate model
     scores = cross_val_score(model, X, y, scoring=scorer, cv=cv, n_jobs=6)
     return scores
