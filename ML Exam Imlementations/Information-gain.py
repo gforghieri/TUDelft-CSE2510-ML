@@ -1,8 +1,29 @@
 # import numpy as np
 # from math import log2
 #
+# # You are given a list of n elements consisting of labels 0 (negative) and 1 (positive) labels.
+# # These are split up by a classifier in 1 or multiple subsets. The set every element belongs to is indicated in sets.
+# #
+# # E.g. if we have the following labels: [0,0,0,0,1,1,1,1] and subsets: [0,1,2,0,1,2,0,1], this means that
+# # after splitting we end up with the following sets of labels: [0,0,1], [0,1,1], [0,1].
+# #
+# # Calculate the information gain when these n elements are split up.
+# #
+# # The formula for individual entropy is:
+# #
+# # ϕ(p)=− ∑i pi log2 pi
 #
-# class Solution():
+# # The formula for overall (split-) entropy is:
+# #
+# # Im=∑j=1s Nj/N * ϕ(pj)
+# # There will be s subsets (possibly more than 1).
+# #
+# # Return the information gain (IG = entropy - split_entropy).
+# #
+# # Hint: to call a function from the Solution class you can use: Solution.function()
+#
+#
+# class Solution:
 #
 #     def information_gain(labels, subsets):
 #         ent = Solution.entropy(labels)
